@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const button = document.createElement('button');
         button.className = 'button variant-outline rounded-full size-sm';
         button.textContent = suggestion;
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
             if (selectedItems.includes(suggestion)) {
                 selectedItems = selectedItems.filter(item => item !== suggestion);
                 button.classList.remove('selected'); // Visually indicate deselection
